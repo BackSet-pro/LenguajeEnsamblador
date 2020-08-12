@@ -6,36 +6,36 @@ section .text
         global _start
 
 _start:
-        mov rcx, 10
-        mov rbx, 10
+        mov ecx, 10
+        mov ebx, 10
 fori:
-    push rcx
-    push rbx
+    push ecx
+    push ebx
 
     mov eax, 4
-    mov rbx, 1
-    mov rcx, new_line
+    mov ebx, 1
+    mov ecx, new_line
     mov edx, 1
     int 80h
 
-    pop rcx
-    mov rbx, rcx
-    push rbx
+    pop ecx
+    mov ebx, ecx
+    push ebx
 
 forj:
-    push rcx
+    push ecx
 
     mov eax, 4
-    mov rbx, 1
-    mov rcx, asterisco
+    mov ebx, 1
+    mov ecx, asterisco
     mov edx, 1
     int 80h
 
-    pop rcx
+    pop ecx
     loop forj
 
-    pop rbx
-    pop rcx
+    pop ebx
+    pop ecx
     loop fori
 
     mov eax, 1
